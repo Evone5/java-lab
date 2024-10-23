@@ -1,0 +1,42 @@
+package evone;
+import java.util.Scanner;
+public class classOverloading {
+
+	public int sum(int a, int b) {
+        return a + b;
+    }
+	public String sum(String a, String b) {
+        return a + b;
+    }
+public int sum(int a) {
+	return(a+1);
+}
+	public static void main(String[] args) {
+		classOverloading example=new classOverloading();
+Scanner sc=new Scanner(System.in);
+System.out.println("enter the first integer:");
+int num1=sc.nextInt();
+System.out.println("enter the second integer:");
+int num2=sc.nextInt();
+int intResult=example.sum(num1, num2);
+System.out.println(intResult);
+sc.nextLine();
+System.out.print("enter the first string:");
+String str1=sc.nextLine();
+System.out.print("enter the second string:");
+String str2=sc.nextLine();
+String stringResult=example.sum(str1,str2);
+System.out.println(stringResult);
+System.out.println("enter the number:");
+int  inc=sc.nextInt();
+int IncResult=example.sum(inc);
+System.out.println(IncResult);
+
+
+
+
+	}
+
+}
+
+
