@@ -1,0 +1,150 @@
+package evone;
+import java.util.Scanner;
+
+public class MatricMultiplication {
+
+
+	public static void main(String[] args) {
+
+		Scanner sc=new Scanner(System.in);
+
+		System.out.println("Enter the number of rows in Matrix A:");
+
+		int rowsOfMatrixA= sc.nextInt();
+
+		System.out.println("Enter the number of Columns in Matrix A:");
+
+		int columnsOfMatrixA= sc.nextInt();
+
+		int[][] matrix= new int[rowsOfMatrixA][columnsOfMatrixA];
+
+		System.out.println("Enter the number of rows in Matrix B:");
+
+		int rowsOfMatrixB= sc.nextInt();
+
+		System.out.println("Enter the number of Columns in Matrix B:");
+
+		int columnsOfMatrixB= sc.nextInt();
+
+		int[][] matrix1= new int[rowsOfMatrixB][columnsOfMatrixB];
+
+		if(columnsOfMatrixA != rowsOfMatrixB) {
+
+			System.out.println("Matrix multiplication not possible!");
+
+		}
+
+		else {
+
+			
+
+		
+
+		System.out.println("Enter the elements of Matrix A");
+
+		for(int i=0;i<rowsOfMatrixA;i++) {
+
+			for(int j=0;j<columnsOfMatrixA;j++) {
+
+				matrix[i][j]=sc.nextInt();
+
+			}
+
+				
+
+		}
+
+		System.out.println("Enter the elements of Matrix B");
+
+		for(int i=0;i<rowsOfMatrixB;i++) {
+
+			for(int j=0;j<columnsOfMatrixB;j++) {
+
+				matrix1[i][j]=sc.nextInt();
+
+			}
+
+		}
+
+		
+
+		System.out.println("Matrix A:");
+
+		for(int i=0;i<rowsOfMatrixA;i++) {
+
+			for(int j=0;j<columnsOfMatrixA;j++) {
+
+				System.out.print(matrix[i][j]+" ");
+
+			}
+
+			System.out.println("\n");
+
+		}
+
+		System.out.println("Matrix B:");
+
+		for(int i=0;i<rowsOfMatrixB;i++) {
+
+			for(int j=0;j<columnsOfMatrixB;j++) {
+
+				System.out.print(matrix1[i][j]+" ");
+
+			}
+
+			System.out.println("\n");
+
+		}
+
+		
+
+		int[][] matrix2= new int [rowsOfMatrixA][columnsOfMatrixB];
+
+			
+
+		System.out.println("Product is: ");
+
+		for(int i=0;i<rowsOfMatrixA;i++) {
+
+		
+
+			
+
+			for(int j=0;j<columnsOfMatrixB;j++) {
+
+				matrix2[i][j]=0;
+
+				for (int k=0;k<columnsOfMatrixA;k++) {
+
+					matrix2[i][j]= matrix[i][k]*matrix1[k][j];
+
+				}
+
+				
+
+				System.out.print( matrix2[i][j]+" ");
+
+			}
+
+			System.out.print("\n");
+
+			
+
+		}
+
+		}
+
+	
+
+		
+
+
+
+		
+
+		
+
+	}
+
+}
+
