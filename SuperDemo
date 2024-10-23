@@ -1,0 +1,105 @@
+package evone;
+ import java.util.Scanner;
+abstract class shape
+{
+	abstract void NumberofSide();
+}
+
+class Triangle extends shape
+{
+	int side;
+	Triangle (int side)
+	{
+		this.side=3;
+		
+		
+	}
+	
+	void NumberofSide()
+	{
+	System.out.println("I am a Triangle.I have "+side+ "sides");
+	int sumofAngle=((side-2)*180);
+	System.out.println("Sum of the angles are "+sumofAngle);
+	}
+	
+}
+class Rectangle extends shape
+{ 
+	int side;
+	Rectangle(int side)
+	{
+		this.side=side;
+		
+		
+	}
+	
+	void NumberofSide()
+	{
+	System.out.println("I am a Rectangle.I have "+side+"sides");
+	int sumofAngle=((side-2)*180);
+	System.out.println("Sum of the angles are "+sumofAngle);
+	}
+	
+	
+}
+class Hexagon extends shape
+{
+	int side;
+	Hexagon(int side)
+	{
+		this.side=side;
+		
+		
+	}
+	
+	void NumberofSide()
+	{
+	System.out.println("I am a Hexagon.I have "+side+"sides");
+	int sumofAngle=((side-2)*180);
+	System.out.println("Sum of the angles are "+sumofAngle);
+	}
+	
+	
+}
+
+public class superdemo 
+{
+	public static void main (String[] args)
+	{
+		String s1="yes";
+		String s2=null;
+		Scanner sc=new Scanner(System.in);
+		do
+		{
+			System.out.println("Enter the number of sides of geometric shape:");
+			int side=sc.nextInt();
+			System.out.println("Shape  with"+side+ "sides");
+			if (side==3)
+			{ 
+				Triangle ob1=new Triangle(3);
+				ob1.NumberofSide();
+			}
+			else if (side==4)
+			{ 
+				Rectangle ob2=new Rectangle(4);
+				ob2.NumberofSide();
+			}
+			else if (side==6)
+			{ 
+				Hexagon ob3=new Hexagon(6);
+				ob3.NumberofSide();
+			}
+			else
+			{
+				System.out.println("Not a vaild shape");
+			}
+			System.out.println("Do you want to continue?( yes/no):" );
+			s2=sc.next();
+		}
+		 while (s1.equals(s2));
+		System.out.println("Exiting.....");
+		 
+	}}
+	
+
+
