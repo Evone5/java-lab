@@ -1,0 +1,65 @@
+package javaAdvaLab;
+import javax.swing.*;  
+import java.awt.*;  
+import java.awt.event.ActionEvent;  
+import java.awt.event.ActionListener;
+
+public class SwingImplementationDemo
+{
+   JFrame frame;  
+   JLabel label;  
+   JTextField textField;  
+   JButton button;  
+  
+public  SwingImplementationDemo() 
+{  
+   createGUI();  
+}  
+  
+public void createGUI() {  
+ 
+ frame = new JFrame("Swing Example");  
+ frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+ frame.setSize(300, 200);  
+  
+ 
+ JPanel panel = new JPanel();  
+  panel.setLayout(new FlowLayout());  
+  
+
+label = new JLabel("Enter your name: ");  
+ textField = new JTextField(20);  
+  button = new JButton("Click me!");  
+  button.addActionListener(new ActionListener() {  
+   
+      public void actionPerformed(ActionEvent e) {  
+         String name = textField.getText();  
+         JOptionPane.showMessageDialog(frame, "Hello, " + name + "!");  
+      }  
+    });  
+  
+ panel.add(label);  
+ panel.add(textField);  
+panel.add(button);  
+  
+
+ frame.getContentPane().add(panel);  
+  
+ 
+ frame.setLocationRelativeTo(null);  
+  
+  
+ frame.setVisible(true); 
+}
+  
+ public static void main(String[] args) {  
+  SwingUtilities.invokeLater (new Runnable() {  
+ 
+public void run() {  
+ new  SwingImplementationDemo();  
+}
+}
+  );
+  } 
+  
+  }
