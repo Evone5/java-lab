@@ -1,0 +1,134 @@
+package evone;
+abstract class Animal 
+{
+protected int legs;
+protected String name;
+public Animal(int legs) 
+{
+this.legs = legs;
+}
+public abstract void eat();
+public void walk() 
+{
+System.out.println("This animal walks on " + legs + " legs.");
+}
+}
+class Spider extends Animal 
+{
+public Spider() 
+{
+super(8);
+}
+public void eat()
+{
+System.out.println("Spider eats insects.");
+}
+}
+interface Pet
+{
+String getName();
+void setName(String name);
+void play();
+}
+interface LandPet extends Pet 
+{
+void walk();
+}
+class Fish extends Animal implements Pet
+{
+private String color;
+public Fish() 
+{
+super(0);
+}
+public void eat() 
+{
+System.out.println("Fish eats plants.");
+}
+public void walk()
+{
+System.out.println("Fish has no legs.");
+}
+public String getName() 
+{
+return name;
+}
+public void setName(String name) 
+{
+this.name = name;
+}
+public void play() 
+{
+System.out.println("This fish's  name is momo.");
+}
+}
+class Cat extends Animal implements Pet 
+{
+public Cat(String name) 
+{
+super(4);
+this.name = name;
+}
+public Cat() 
+{
+this("");
+}
+public void walk() 
+{
+System.out.println("This animal walks by " + legs + " legs.");
+}
+public String getName() 
+{
+return name;
+}
+public void setName(String name) 
+{
+this.name = name;
+}
+public void play() 
+{
+System.out.println("Cat play with rats.");
+}
+public void eat() 
+{
+System.out.println("Cat eat fishes.");
+}
+public void name() {
+System.out.println("This Cat's name is MOOSE  .");
+}
+}
+public class InterfaceDemo  {
+public static void main(String[] args) {
+Fish fish = new Fish();
+Cat cat = new Cat("Fluffy");
+Spider spider= new Spider();
+Animal animalFish = new Fish();
+Animal animalSpider = new Spider();
+Pet petCat = new Cat();
+
+fish.setName("mimi");
+System.out.println("FISH");
+System.out.println("This Fish's name is  " + fish.getName());
+fish.eat();
+fish.walk();
+fish.play();
+System.out.println("");
+System.out.println("CAT");
+System.out.println("This Cat name is  " + cat.getName());
+cat.walk();
+cat.play();
+cat.eat();
+petCat.setName("MOOSE");
+System.out.println("This cat name is " + petCat.getName());
+System.out.println("");
+System.out.println("SPIDER");
+spider.eat();
+spider.walk();
+}
+}
+
+	
+
+
+
+
